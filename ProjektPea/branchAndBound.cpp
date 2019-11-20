@@ -2,7 +2,9 @@
 #include "branchAndBound.h"
 #include <random>
 #include <ctime>
+#include <iostream>
 
+using namespace std;
 
 branchAndBound::branchAndBound()
 {
@@ -35,6 +37,7 @@ branchAndBoundStruct branchAndBound::calculateBranchAndBound(dataSet data, std::
 
 	// Koszty przejœæ
 	pathCosts = data.data;
+	count = 0;
 
 	// Ustawienie iloœci wêz³ów w problemie
 	numberOfNodes = nodes.size();
@@ -52,12 +55,15 @@ branchAndBoundStruct branchAndBound::calculateBranchAndBound(dataSet data, std::
 	calculatePath(&allPaths);
 	
 	branchAndBoundStruct resultStruct = branchAndBoundStruct(minimalPath, minimalPathCost);
+	cout << std::endl << "ilosc: " << count;
 	return resultStruct;
 }
 
 // Rekurencyjna funkcja licz¹ca œcie¿ki
 void branchAndBound::calculatePath(std::vector<branchAndBoundStruct> * nodesVector)
 {
+	count++;
+
 	// Ostatni element wektora
 	branchAndBoundStruct selectedStruct = nodesVector->back();
 	// Usuniêcie ostatniego elementu wektora
@@ -75,6 +81,7 @@ void branchAndBound::calculatePath(std::vector<branchAndBoundStruct> * nodesVect
 				// Utworzenie nowej struktury ze œcie¿k¹
 				branchAndBoundStruct brandNewStruct(selectedStruct.path, selectedStruct.pathCost);
 				brandNewStruct.path.push_back(i);
+
 
 				int pathResult = calculatePatchCost(brandNewStruct.path);
 

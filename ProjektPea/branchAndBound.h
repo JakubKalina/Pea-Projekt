@@ -11,6 +11,7 @@ public:
 	branchAndBoundStruct calculateBranchAndBound(dataSet data, std::vector<int> nodes, int initialMinimalCost);
 	// Koszt pocz¹tkowej œcie¿ki
 	int initialPathCost;
+	int count;
 	// Minimalna œcie¿ka
 	std::vector<int> minimalPath;
 	// Koszt minimalnej œcie¿ki
