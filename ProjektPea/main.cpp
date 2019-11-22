@@ -16,9 +16,17 @@
 #include <vector>
 #include <algorithm>
 #include <random>
+#include <ctime>>
 
 using namespace std;
 
+
+// Funkcja wypisująca w konsoli czas działania algorytmu
+void PrintCalculationTime(clock_t startTime, clock_t finishTime)
+{
+	double result = ((finishTime - startTime) / (double)CLOCKS_PER_SEC);
+	cout << endl << "Czas wykonywania algorytmu to: " << result << endl;
+}
 
 int main()
 {
@@ -60,6 +68,9 @@ int main()
 	// Przykładowy wektor ( permutacja 0, 1, ... rozmiar problemu - 1 )
 	vector<int> nodes = pathManager.getVector(data.dataSize);
 
+	//
+	clock_t start, finish;
+
 
 	switch (option)
 	{
@@ -81,33 +92,80 @@ int main()
 		}
 		result = pathManager.calculateGoal(data, nodes);
 		cout << "Funkcja celu - wynik : " << result << endl << endl << endl;
+
+
 		break;
 
 	case 2:
+		start = clock();
+
 		result= bruteForce.calculateBruteForce(data, nodes);
 		cout << "Broute force - wynik: " << result << endl << endl;
+
+		finish = clock();
+
+		PrintCalculationTime(start, finish);
+
 		break;
 
 	case 3:
+		start = clock();
+
+
 		resultBnb = bruteForceTree.calculateBranchAndBound(data, nodes);
 		cout << "Brute force - wynik: " << resultBnb.pathCost << endl << endl;
+
+		finish = clock();
+
+		PrintCalculationTime(start, finish);
+
+
 		break;
 
 	case 4:
+		start = clock();
+
+
 		resultBnb = branchAndBound.calculateBranchAndBound(data, nodes, 0);
 		cout << "Branch and bound - wynik: " << resultBnb.pathCost << endl << endl;
+
+		finish = clock();
+
+		PrintCalculationTime(start, finish);
+
+
+
 		break;
 	case 5:
+		start = clock();
+
+
 		resultBnb = branchAndBound.calculateBranchAndBound(data, nodes, 1);
 		cout << "Branch and bound - wynik: " << resultBnb.pathCost << endl << endl;
+
+		finish = clock();
+
+		PrintCalculationTime(start, finish);
+
+
 		break;
 
 	case 6:
+		start = clock();
+
+
 		cout << endl << "Wprowadz gorne ograniczenie: ";
 		cin >> upperBound;
 		cout << endl << endl;
 		resultBnb = branchAndBound.calculateBranchAndBound(data, nodes, upperBound);
 		cout << "Branch and bound - wynik: " << resultBnb.pathCost << endl << endl;
+
+		finish = clock();
+
+		PrintCalculationTime(start, finish);
+
+
+
 		break;
 
 	}
@@ -115,3 +173,5 @@ int main()
 	
 	return 0;
 }
+
+

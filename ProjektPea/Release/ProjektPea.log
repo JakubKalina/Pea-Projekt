@@ -1,10 +1,8 @@
-﻿  branchAndBound.cpp
-e:\jakub\documents\programowanie\c++\peaprojekt\vsproj\projektpea\projektpea\branchandbound.cpp(26): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-e:\jakub\documents\programowanie\c++\peaprojekt\vsproj\projektpea\projektpea\branchandbound.cpp(122): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-  main.cpp
+﻿  main.cpp
+e:\jakub\documents\programowanie\c++\peaprojekt\vsproj\projektpea\projektpea\main.cpp(19): warning C4067: nieoczekiwane tokeny występujące po dyrektywie preprocesora - oczekiwano nowego wiersza
   Trwa generowanie kodu
-  16 of 411 functions ( 3.9%) were compiled, the rest were copied from previous compilation.
+  0 of 412 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    10 functions had inline decision re-evaluated but remain unchanged
+    0 functions had inline decision re-evaluated but remain unchanged
   Zakończono generowanie kodu
   ProjektPea.vcxproj -> E:\Jakub\Documents\Programowanie\C++\PeaProjekt\VSproj\ProjektPea\Release\ProjektPea.exe
