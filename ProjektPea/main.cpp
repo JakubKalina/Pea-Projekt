@@ -50,7 +50,9 @@ int main()
 	cout << "3. Brute force (bez uzycia next permutation)" << endl;
 	cout << "4. Branch and bound (gorne ograniczenie liczone z pierwszej sciezki)" << endl;
 	cout << "5. Branch and bound (gorne ograniczenie losowane)" << endl;
-	cout << "6. Branch and bound (gorne ograniczenie wprowadzane recznie)" << endl << endl << endl;
+	cout << "6. Branch and bound (gorne ograniczenie wprowadzane recznie)" << endl;
+	cout << "7. Symulowane wyżarzanie (parametry domyślne)" << endl;
+	cout << "8. Symulowane wyżarzanie (parametry wprowadzane przez użytkownika)" << endl << endl << endl;
 
 	// Opcja wybrana przez użytkownika
 	int option;
@@ -165,6 +167,43 @@ int main()
 		PrintCalculationTime(start, finish);
 
 
+
+		break;
+
+	case 7:
+		start = clock();
+
+	//	cout << "Symulowane wyzarzanie - wynik: " << << endl;
+
+		finish = clock();
+
+		PrintCalculationTime(start, finish);
+
+		break;
+
+	case 8:
+
+		start = clock();
+
+		cout << endl << "Wprowadz parametry algorytmu " <<endl << endl;
+
+		float initialTemperature;
+		float finalTemperature;
+		float coolingTemperature;
+
+		cout << "Temperatura startowa: ";
+		cin >> initialTemperature;
+		cout << "Temperatura końcowa: ";
+		cin >> finalTemperature;
+		cout << "Temperatura chłodzenia: ";
+		cin >> coolingTemperature;
+
+
+	//	cout << "Symulowane wyzarzanie - wynik: " << << endl;
+
+		finish = clock();
+
+		PrintCalculationTime(start, finish);
 
 		break;
 
