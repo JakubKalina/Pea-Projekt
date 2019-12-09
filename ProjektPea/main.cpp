@@ -8,6 +8,7 @@
 #include "branchAndBoundStruct.h"
 #include "branchAndBound.h"
 #include "bruteForceTree.h"
+#include "simulatedAnnealing.h"
 #include <iostream>
 #include <windows.h>
 #include <conio.h>
@@ -37,6 +38,7 @@ int main()
 	bruteForce bruteForce;
 	bruteForceTree bruteForceTree;
 	branchAndBound branchAndBound;
+	simulatedAnnealing simulatedAnnealing;
 	branchAndBoundStruct resultBnb;
 	auto rng = std::default_random_engine{};
 
@@ -166,13 +168,12 @@ int main()
 
 		PrintCalculationTime(start, finish);
 
-
-
 		break;
 
 	case 7:
 		start = clock();
 
+		result = simulatedAnnealing.calculateSimulatedAnnealing(data, nodes);
 	//	cout << "Symulowane wyzarzanie - wynik: " << << endl;
 
 		finish = clock();
@@ -190,15 +191,18 @@ int main()
 		float initialTemperature;
 		float finalTemperature;
 		float coolingTemperature;
+		int numberOfIterations;
 
-		cout << "Temperatura startowa: ";
+		cout << "Temperatura startowa (float): ";
 		cin >> initialTemperature;
-		cout << "Temperatura końcowa: ";
+		cout << "Temperatura końcowa (float): ";
 		cin >> finalTemperature;
-		cout << "Temperatura chłodzenia: ";
+		cout << "Temperatura chłodzenia (float): ";
 		cin >> coolingTemperature;
+		cout << "Liczba przejść: ";
+		cin >> numberOfIterations;
 
-
+		result = simulatedAnnealing.calculateSimulatedAnnealing(data, nodes, initialTemperature, finalTemperature, coolingTemperature, numberOfIterations);
 	//	cout << "Symulowane wyzarzanie - wynik: " << << endl;
 
 		finish = clock();
