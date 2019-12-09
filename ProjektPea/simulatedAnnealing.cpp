@@ -15,9 +15,9 @@ simulatedAnnealing::simulatedAnnealing(dataSet data, std::vector<int> nodes, flo
 
 simulatedAnnealing::simulatedAnnealing(dataSet data, std::vector<int> nodes)
 {
-	this->initialTemperature = 1000.0f;
-	this->finalTemperature = 0.001f;
-	this->coolingTemperature = 0.999f;
+	this->initialTemperature = 100000.0f;
+	this->finalTemperature = 0.0001f;
+	this->coolingTemperature = 0.9999f;
 	this->data = data;
 	this->nodes = nodes;
 	this->numberOfIterations = (int)pow(nodes.size(), 2)/4;
@@ -33,9 +33,11 @@ int simulatedAnnealing::calculateSimulatedAnnealing()
 
 }
 
+// Wyliczenie prawdopodobieñstwa
 float simulatedAnnealing::countProbability()
 {
-
+	double calculatedPower = ((currentPathResult - bestPathResult) / currentTemerature);
+	return pow(exp(1.0), calculatedPower);
 }
 
 void simulatedAnnealing::mixPath()

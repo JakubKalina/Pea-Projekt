@@ -1,8 +1,15 @@
 #pragma once
 #include "dataSet.h"
 #include "pathManager.h"
-#include <vector>
 #include <math.h>
+#include <iostream>
+#include <string>
+#include <vector>
+#include <algorithm>
+#include <cmath>
+#include <cstdlib>
+#include <ctime>
+#define _USE_MATH_DEFINES
 
 class simulatedAnnealing
 {
@@ -15,6 +22,8 @@ public:
 	std::vector<int> bestPath;
 private:
 	dataSet data;
+	int currentPathResult;
+	float currentTemerature;
 	std::vector<int> nodes;
 	float initialTemperature;
 	float finalTemperature;
