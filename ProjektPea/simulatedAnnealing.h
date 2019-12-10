@@ -14,8 +14,7 @@
 class simulatedAnnealing
 {
 public:
-	simulatedAnnealing(dataSet data, std::vector<int> nodes, float initialTemperature, float finalTemperature, float coolingTemperature, int numberOfIterations);
-	simulatedAnnealing(dataSet data, std::vector<int> nodes);
+	simulatedAnnealing();
 	int calculateSimulatedAnnealing(dataSet data, std::vector<int> nodes, float initialTemperature, float finalTemperature, float coolingTemperature, int numberOfIterations);
 	~simulatedAnnealing();
 	int bestPathResult;

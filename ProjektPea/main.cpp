@@ -53,8 +53,8 @@ int main()
 	cout << "4. Branch and bound (gorne ograniczenie liczone z pierwszej sciezki)" << endl;
 	cout << "5. Branch and bound (gorne ograniczenie losowane)" << endl;
 	cout << "6. Branch and bound (gorne ograniczenie wprowadzane recznie)" << endl;
-	cout << "7. Symulowane wyżarzanie (parametry domyślne)" << endl;
-	cout << "8. Symulowane wyżarzanie (parametry wprowadzane przez użytkownika)" << endl << endl << endl;
+	cout << "7. Symulowane wyzarzanie (parametry domyslne)" << endl;
+	cout << "8. Symulowane wyzarzanie (parametry wprowadzane przez uzytkownika)" << endl << endl << endl;
 
 	// Opcja wybrana przez użytkownika
 	int option;
@@ -173,14 +173,14 @@ int main()
 	case 7:
 		start = clock();
 
-		simulatedAnnealingObject = new simulatedAnnealing(data, nodes);
-		result = simulatedAnnealingObject->calculateSimulatedAnnealing(data, nodes, 100000.0, 0.0001, 0.9999, (int)pow(nodes.size(), 2) / 4);
+		simulatedAnnealingObject = new simulatedAnnealing();
+		result = simulatedAnnealingObject->calculateSimulatedAnnealing(data, nodes, 20.0, 0.01, 0.99, (int)(pow(nodes.size(), 2) / 4));
 		cout << "Symulowane wyzarzanie - wynik: " << result << endl;
 
 		finish = clock();
 
 		PrintCalculationTime(start, finish);
-
+		
 		break;
 
 	case 8:
@@ -196,14 +196,14 @@ int main()
 
 		cout << "Temperatura startowa (float): ";
 		cin >> initialTemperature;
-		cout << "Temperatura końcowa (float): ";
+		cout << "Temperatura końncowa (float): ";
 		cin >> finalTemperature;
-		cout << "Temperatura chłodzenia (float): ";
+		cout << "Temperatura chlodzenia (float): ";
 		cin >> coolingTemperature;
-		cout << "Liczba przejść: ";
+		cout << "Liczba przejsc1: ";
 		cin >> numberOfIterations;
 
-		simulatedAnnealingObject = new simulatedAnnealing(data, nodes);
+		simulatedAnnealingObject = new simulatedAnnealing();
 
 		result = simulatedAnnealingObject->calculateSimulatedAnnealing(data, nodes, initialTemperature, finalTemperature, coolingTemperature, numberOfIterations);
 		cout << "Symulowane wyzarzanie - wynik: " << result << endl;

@@ -2,13 +2,7 @@
 #include "simulatedAnnealing.h"
 
 
-simulatedAnnealing::simulatedAnnealing(dataSet data, std::vector<int> nodes, float initialTemperature, float finalTemperature, float coolingTemperature, int numberOfIterations)
-{
-
-
-}
-
-simulatedAnnealing::simulatedAnnealing(dataSet data, std::vector<int> nodes)
+simulatedAnnealing::simulatedAnnealing()
 {
 
 }
@@ -55,8 +49,8 @@ int simulatedAnnealing::calculateSimulatedAnnealing(dataSet data, std::vector<in
 // Wyliczenie prawdopodobieñstwa
 float simulatedAnnealing::countProbability()
 {
-	double calculatedPower = ((currentPathResult - bestPathResult) / currentTemerature);
-	return pow(exp(1.0), calculatedPower);
+	double calculatedPower = ((bestPathResult - currentPathResult) / currentTemerature);
+	return exp(calculatedPower);
 }
 
 // Wymieszanie œcie¿ki
