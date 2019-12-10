@@ -38,7 +38,7 @@ int main()
 	bruteForce bruteForce;
 	bruteForceTree bruteForceTree;
 	branchAndBound branchAndBound;
-	simulatedAnnealing simulatedAnnealing;
+	simulatedAnnealing* simulatedAnnealingObject;
 	branchAndBoundStruct resultBnb;
 	auto rng = std::default_random_engine{};
 
@@ -173,8 +173,9 @@ int main()
 	case 7:
 		start = clock();
 
-		result = simulatedAnnealing.calculateSimulatedAnnealing(data, nodes);
-	//	cout << "Symulowane wyzarzanie - wynik: " << << endl;
+		simulatedAnnealingObject = new simulatedAnnealing(data, nodes);
+		result = simulatedAnnealingObject->calculateSimulatedAnnealing(data, nodes, 100000.0, 0.0001, 0.9999, (int)pow(nodes.size(), 2) / 4);
+		cout << "Symulowane wyzarzanie - wynik: " << result << endl;
 
 		finish = clock();
 
@@ -202,8 +203,10 @@ int main()
 		cout << "Liczba przejść: ";
 		cin >> numberOfIterations;
 
-		result = simulatedAnnealing.calculateSimulatedAnnealing(data, nodes, initialTemperature, finalTemperature, coolingTemperature, numberOfIterations);
-	//	cout << "Symulowane wyzarzanie - wynik: " << << endl;
+		simulatedAnnealingObject = new simulatedAnnealing(data, nodes);
+
+		result = simulatedAnnealingObject->calculateSimulatedAnnealing(data, nodes, initialTemperature, finalTemperature, coolingTemperature, numberOfIterations);
+		cout << "Symulowane wyzarzanie - wynik: " << result << endl;
 
 		finish = clock();
 

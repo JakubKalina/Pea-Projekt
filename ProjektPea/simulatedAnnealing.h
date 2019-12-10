@@ -16,7 +16,7 @@ class simulatedAnnealing
 public:
 	simulatedAnnealing(dataSet data, std::vector<int> nodes, float initialTemperature, float finalTemperature, float coolingTemperature, int numberOfIterations);
 	simulatedAnnealing(dataSet data, std::vector<int> nodes);
-	int calculateSimulatedAnnealing();
+	int calculateSimulatedAnnealing(dataSet data, std::vector<int> nodes, float initialTemperature, float finalTemperature, float coolingTemperature, int numberOfIterations);
 	~simulatedAnnealing();
 	int bestPathResult;
 	std::vector<int> bestPath;
@@ -30,6 +30,6 @@ private:
 	float coolingTemperature;
 	int numberOfIterations;
 	float countProbability();
-	void mixPath();
+	std::vector<int> mixPath(std::vector<int> nodesVector);
 };
 

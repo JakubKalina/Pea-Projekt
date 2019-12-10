@@ -1,3 +1,4 @@
-﻿  bruteForceTree.cpp
-e:\jakub\documents\programowanie\c++\peaprojekt\vsproj\projektpea\projektpea\bruteforcetree.cpp(120): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+﻿  main.cpp
+e:\jakub\documents\programowanie\c++\peaprojekt\vsproj\projektpea\projektpea\main.cpp(20): warning C4067: nieoczekiwane tokeny występujące po dyrektywie preprocesora - oczekiwano nowego wiersza
+e:\jakub\documents\programowanie\c++\peaprojekt\vsproj\projektpea\projektpea\main.cpp(177): warning C4305: "argument": obcięcie z "double" do "float"
   ProjektPea.vcxproj -> E:\Jakub\Documents\Programowanie\C++\PeaProjekt\VSproj\ProjektPea\Debug\ProjektPea.exe
