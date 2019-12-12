@@ -74,7 +74,7 @@ int main()
 	// Przykładowy wektor ( permutacja 0, 1, ... rozmiar problemu - 1 )
 	vector<int> nodes = pathManager.getVector(data.dataSize);
 
-	//
+	// Zmienne przechowujące czasy rozpoczęcia i zakończenia pomiaru
 	clock_t start, finish;
 
 

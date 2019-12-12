@@ -101,5 +101,7 @@
     <Text Include="data42.txt" />
     <Text Include="data58.txt" />
     <Text Include="data120.txt" />
+    <Text Include="data34.txt" />
+    <Text Include="data71.txt" />
   </ItemGroup>
 </Project>

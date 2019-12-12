@@ -51,6 +51,7 @@ int simulatedAnnealing::calculateSimulatedAnnealing(dataSet data, std::vector<in
 	bestPathResult = currentPathResult;
 	srand((unsigned int)time(NULL));
 
+	// Do czasu ostygniêcia
 	while (currentTemerature > finalTemperature)
 	{
 		for (int i = 0; i < numberOfIterations; i++)
@@ -64,6 +65,8 @@ int simulatedAnnealing::calculateSimulatedAnnealing(dataSet data, std::vector<in
 				bestPathResult = currentPathResult;
 			}
 		}
+
+		// Wych³adzanie
 		if (coolingOption == 1)
 		{
 			currentTemerature *= coolingTemperature;
