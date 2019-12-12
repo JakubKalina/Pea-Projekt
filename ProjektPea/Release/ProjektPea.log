@@ -1,8 +1,9 @@
-﻿  simulatedAnnealing.cpp
-e:\jakub\documents\programowanie\c++\peaprojekt\vsproj\projektpea\projektpea\simulatedannealing.cpp(53): warning C4244: "return": konwersja z "double" do "float", możliwa utrata danych
+﻿  main.cpp
+e:\jakub\documents\programowanie\c++\peaprojekt\vsproj\projektpea\projektpea\main.cpp(20): warning C4067: nieoczekiwane tokeny występujące po dyrektywie preprocesora - oczekiwano nowego wiersza
+e:\jakub\documents\programowanie\c++\peaprojekt\vsproj\projektpea\projektpea\main.cpp(193): warning C4305: "argument": obcięcie z "double" do "float"
   Trwa generowanie kodu
-  2 of 434 functions ( 0.5%) were compiled, the rest were copied from previous compilation.
+  1 of 441 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    1 functions had inline decision re-evaluated but remain unchanged
+    4 functions had inline decision re-evaluated but remain unchanged
   Zakończono generowanie kodu
   ProjektPea.vcxproj -> E:\Jakub\Documents\Programowanie\C++\PeaProjekt\VSproj\ProjektPea\Release\ProjektPea.exe

@@ -9,13 +9,15 @@
 #include <cmath>
 #include <cstdlib>
 #include <ctime>
+#include <random>       
+#include <chrono>       
 #define _USE_MATH_DEFINES
 
 class simulatedAnnealing
 {
 public:
 	simulatedAnnealing();
-	int calculateSimulatedAnnealing(dataSet data, std::vector<int> nodes, float initialTemperature, float finalTemperature, float coolingTemperature, int numberOfIterations);
+	int calculateSimulatedAnnealing(dataSet data, std::vector<int> nodes, float initialTemperature, float finalTemperature, float coolingTemperature, int numberOfIterations, int coolingOption, int shufflePath);
 	~simulatedAnnealing();
 	int bestPathResult;
 	std::vector<int> bestPath;

@@ -35,6 +35,8 @@ int main()
 	pathManager pathManager;
 	int result = 0;
 	int upperBound;
+	int coolingOption;
+	int shufflePath;
 	bruteForce bruteForce;
 	bruteForceTree bruteForceTree;
 	branchAndBound branchAndBound;
@@ -171,10 +173,24 @@ int main()
 		break;
 
 	case 7:
+
+		cout << endl << "Wybierz rodzaj chlodzenia: " << endl;
+		cout << "1. Geometryczne" << endl;
+		cout << "2. Liniowe" << endl;
+		cout << "3. Logarytmiczne" << endl;
+		cout << "Wybor: ";
+		cin >> coolingOption;
+
+		cout << endl << endl << "Sciezka poczatkowa: " << endl;
+		cout << "1. Naturalna" << endl;
+		cout << "2. Losowa" << endl;
+		cout << "3. Algorytm zachlanny" << endl;
+		cin >> shufflePath;
+
 		start = clock();
 
 		simulatedAnnealingObject = new simulatedAnnealing();
-		result = simulatedAnnealingObject->calculateSimulatedAnnealing(data, nodes, 20.0, 0.01, 0.99, (int)(pow(nodes.size(), 2) / 4));
+		result = simulatedAnnealingObject->calculateSimulatedAnnealing(data, nodes, 20.0, 0.01, 0.99, (int)(pow(nodes.size(), 2) / 4), coolingOption, shufflePath);
 		cout << "Symulowane wyzarzanie - wynik: " << result << endl;
 
 		finish = clock();
@@ -185,8 +201,6 @@ int main()
 
 	case 8:
 
-		start = clock();
-
 		cout << endl << "Wprowadz parametry algorytmu " <<endl << endl;
 
 		float initialTemperature;
@@ -196,16 +210,31 @@ int main()
 
 		cout << "Temperatura startowa (float): ";
 		cin >> initialTemperature;
-		cout << "Temperatura końncowa (float): ";
+		cout << "Temperatura koncowa (float): ";
 		cin >> finalTemperature;
 		cout << "Temperatura chlodzenia (float): ";
 		cin >> coolingTemperature;
-		cout << "Liczba przejsc1: ";
+		cout << "Liczba przejsc: ";
 		cin >> numberOfIterations;
+
+		cout << endl << "Wybierz rodzaj chlodzenia: " << endl;
+		cout << "1. Geometryczne" << endl;
+		cout << "2. Liniowe" << endl;
+		cout << "3. Logarytmiczne" << endl;
+		cout << "Wybor: ";
+		cin >> coolingOption;
+
+		cout << endl << endl << "Sciezka poczatkowa: " << endl;
+		cout << "1. Naturalna" << endl;
+		cout << "2. Losowa" << endl;
+		cout << "3. Algorytm zachlanny" << endl;
+		cin >> shufflePath;
+
+		start = clock();
 
 		simulatedAnnealingObject = new simulatedAnnealing();
 
-		result = simulatedAnnealingObject->calculateSimulatedAnnealing(data, nodes, initialTemperature, finalTemperature, coolingTemperature, numberOfIterations);
+		result = simulatedAnnealingObject->calculateSimulatedAnnealing(data, nodes, initialTemperature, finalTemperature, coolingTemperature, numberOfIterations, coolingOption, shufflePath);
 		cout << "Symulowane wyzarzanie - wynik: " << result << endl;
 
 		finish = clock();
