@@ -151,6 +151,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Genetic.h" />
+    <ClInclude Include="GeneticEntity.h" />
+    <ClInclude Include="GeneticPair.h" />
     <ClInclude Include="branchAndBound.h" />
     <ClInclude Include="branchAndBoundStruct.h" />
     <ClInclude Include="bruteForce.h" />
@@ -163,6 +166,9 @@
     <ClInclude Include="simulatedAnnealing.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Genetic.cpp" />
+    <ClCompile Include="GeneticEntity.cpp" />
+    <ClCompile Include="GeneticPair.cpp" />
     <ClCompile Include="branchAndBound.cpp" />
     <ClCompile Include="branchAndBoundStruct.cpp" />
     <ClCompile Include="bruteForce.cpp" />

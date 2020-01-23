@@ -1,14 +1,2 @@
-﻿  main.cpp
-e:\jakub\documents\programowanie\c++\peaprojekt\vsproj\projektpea\projektpea\main.cpp(20): warning C4067: nieoczekiwane tokeny występujące po dyrektywie preprocesora - oczekiwano nowego wiersza
-e:\jakub\documents\programowanie\c++\peaprojekt\vsproj\projektpea\projektpea\main.cpp(187): warning C4305: "argument": obcięcie z "double" do "float"
-  simulatedAnnealing.cpp
-e:\jakub\documents\programowanie\c++\peaprojekt\vsproj\projektpea\projektpea\simulatedannealing.cpp(20): warning C4244: "inicjowanie": konwersja z "_Rep" do "unsigned int", możliwa utrata danych
-          with
-          [
-              _Rep=std::chrono::system_clock::rep
-          ]
-e:\jakub\documents\programowanie\c++\peaprojekt\vsproj\projektpea\projektpea\simulatedannealing.cpp(26): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-e:\jakub\documents\programowanie\c++\peaprojekt\vsproj\projektpea\projektpea\simulatedannealing.cpp(29): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-e:\jakub\documents\programowanie\c++\peaprojekt\vsproj\projektpea\projektpea\simulatedannealing.cpp(88): warning C4244: "return": konwersja z "double" do "float", możliwa utrata danych
-  Generowanie kodu...
+﻿  ACO.cpp
   ProjektPea.vcxproj -> E:\Jakub\Documents\Programowanie\C++\PeaProjekt\VSproj\ProjektPea\Debug\ProjektPea.exe

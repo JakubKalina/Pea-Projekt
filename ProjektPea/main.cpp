@@ -9,6 +9,7 @@
 #include "branchAndBound.h"
 #include "bruteForceTree.h"
 #include "simulatedAnnealing.h"
+#include "Genetic.h"
 #include <iostream>
 #include <windows.h>
 #include <conio.h>
@@ -42,8 +43,15 @@ int main()
 	branchAndBound branchAndBound;
 	simulatedAnnealing* simulatedAnnealingObject;
 	branchAndBoundStruct resultBnb;
+	Genetic geneticAlgorithm;
 	auto rng = std::default_random_engine{};
+	int numberOfNodes;
+	int populationSize;
+	int numberOfGenerations;
+	double mutationRate;
 
+	float sumResults = 0;
+	int minResult = INT_MAX;
 
 	// Wyświetlane menu
 	cout << "Wybierz jeden z dostepnych algorytmow: \n\n";
@@ -56,7 +64,8 @@ int main()
 	cout << "5. Branch and bound (gorne ograniczenie losowane)" << endl;
 	cout << "6. Branch and bound (gorne ograniczenie wprowadzane recznie)" << endl;
 	cout << "7. Symulowane wyzarzanie (parametry domyslne)" << endl;
-	cout << "8. Symulowane wyzarzanie (parametry wprowadzane przez uzytkownika)" << endl << endl << endl;
+	cout << "8. Symulowane wyzarzanie (parametry wprowadzane przez uzytkownika)" << endl;
+	cout << "9. Algorytm genetyczny" << endl << endl << endl;
 
 	// Opcja wybrana przez użytkownika
 	int option;
@@ -232,10 +241,37 @@ int main()
 
 		start = clock();
 
-		simulatedAnnealingObject = new simulatedAnnealing();
+			simulatedAnnealingObject = new simulatedAnnealing();
 
-		result = simulatedAnnealingObject->calculateSimulatedAnnealing(data, nodes, initialTemperature, finalTemperature, coolingTemperature, numberOfIterations, coolingOption, shufflePath);
+			result = simulatedAnnealingObject->calculateSimulatedAnnealing(data, nodes, initialTemperature, finalTemperature, coolingTemperature, numberOfIterations, coolingOption, shufflePath);
+
+
+			//cout << "Wynik: " << result << endl;
+		
 		cout << "Symulowane wyzarzanie - wynik: " << result << endl;
+		//cout << "SA - srednia: " << (sumResults/3) << endl;
+		//cout << "SA - min wynik: " << minResult << endl;
+
+		finish = clock();
+
+		PrintCalculationTime(start, finish);
+
+		break;
+
+	// Algorytm genetyczny
+	case 9:
+
+		cout << "Rozmiar populacji: ";
+		cin >> populationSize;
+		cout << "Ilosc generacji: ";
+		cin >> numberOfGenerations;
+		cout << "Procent mutacji: ";
+		cin >> mutationRate;
+
+		start = clock();
+
+		result = geneticAlgorithm.SolveGenetic(data, populationSize, numberOfGenerations, mutationRate);
+		cout << "Algorytm genetyczny - wynik: " << result << endl;
 
 		finish = clock();
 
